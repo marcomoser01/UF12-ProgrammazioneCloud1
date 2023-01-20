@@ -9,10 +9,15 @@ import { DatiService } from '../services/dati.service';
 export class AltraComponenteComponent {
 
   contatore: number = 0;
-  constructor(private datiService: DatiService) { }
+  constructor(private datiService: DatiService) {  }
   
 
   onGetContatore() {
-    this.contatore = this.datiService.getContatore();
+    //this.contatore = this.datiService.getContatore();
+    this.datiService.subject$.subscribe(
+      res => {
+        this.contatore = res;
+      }
+    )
   }
 }

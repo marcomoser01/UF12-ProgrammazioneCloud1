@@ -1,0 +1,6 @@
+<button (click)="onVisualizza()">Visualizza/Nascondi</button>
+<div *ngIf="visualizza">
+  <div *ngFor="let post of posts$ | async">
+    {{post | json }}
+  </div>
+</div>
