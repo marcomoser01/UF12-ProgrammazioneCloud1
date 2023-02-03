@@ -1,0 +1,40 @@
+<h2>Add libro</h2>
+<div>
+<form [formGroup]="librofrm" (ngSubmit)="onSubmit(librofrm.value)">
+    <input type="input" id="id" placeholder="id" formControlName="id" hidden>
+    <div>Titolo:
+        <mat-form-field appearance="fill">
+            <mat-label>Titolo</mat-label>
+            <input matInput id="titolo" placeholder="titolo" formControlName="titolo">
+        </mat-form-field>
+    </div>
+    <div>Autore:
+        <mat-form-field appearance="fill">
+            <mat-label>Autore</mat-label>
+            <input matInput id="autore" placeholder="autore" formControlName="autore">
+        </mat-form-field>
+    </div>
+    <div class="example-container">Prezzo: 
+        <mat-form-field appearance="fill" floatLabel="always">
+            <mat-label>Prezzo Copertina</mat-label>
+            <input matInput type="number" class="example-right-align" id="prezzoCopertina" placeholder="0" formControlName="autore">
+            <span matTextPrefix>$&nbsp;</span>
+            <span matTextSuffix>.00</span>
+        </mat-form-field>
+    </div>
+    <br><br><br><br><br><br>
+    <mat-form-field appearance="fill" floatLabel="always">
+        <mat-label>Amount</mat-label>
+        <input matInput type="number" class="example-right-align" placeholder="0">
+        <span matTextPrefix>$&nbsp;</span>
+        <span matTextSuffix>.00</span>
+    </mat-form-field>
+    <br><br><br><br><br><br><br>
+    <br>
+    <button mat-raised-button color="primary" type="submit">Salva</button>
+    <button mat-raised-button color="basic" (click)="annulla()">Annulla</button>
+
+
+    
+</form>
+</div>

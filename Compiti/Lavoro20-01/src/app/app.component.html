@@ -1,0 +1,8 @@
+<input type="text" [(ngModel)]="persona.nome">
+<input type="text" [(ngModel)]="persona.importo">
+<button (click)="add(persona)">add</button>
+
+
+<div *ngFor="let persona of persone | async">
+    {{persona | json}}
+</div>
