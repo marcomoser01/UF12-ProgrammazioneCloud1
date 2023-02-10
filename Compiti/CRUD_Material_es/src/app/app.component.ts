@@ -13,7 +13,7 @@ export class AppComponent {
 
   displayedColumns: string[] = ['demo-position', 'demo-name', 'demo-weight', 'demo-symbol', 'demo-bot'];
 
-  libri$: Observable<Libro[]>= new Observable<Libro[]>();
+  libri$: Observable<Libro[]> = new Observable<Libro[]>();
   isAdd: boolean = false;
   libro?: Libro = new Libro();
 
