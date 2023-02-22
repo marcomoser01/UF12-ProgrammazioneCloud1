@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { Router } from '@angular/router';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-error404',
@@ -6,5 +8,29 @@ import { Component } from '@angular/core';
   styleUrls: ['./error404.component.css']
 })
 export class Error404Component {
+  
+  moduleCaller :String = 'home';
+
+  constructor(private router: Router, @Inject(DOCUMENT) private document: Document) {
+    let module = ['home', 'libreria', 'film'];
+    let splitUrl = this.router.url.substring(1, this.router.url.length).split('/');
+    let count = 0;
+    let trovato :Boolean = false;
+    do {
+      if(module.includes(splitUrl[count])) {
+        this.moduleCaller = splitUrl[count];
+        trovato = true;
+      }
+      count++;
+    } while(!trovato && count < splitUrl.length);
+  }
+
+  redirectTo(isHome) {    
+    if(isHome) {
+      this.router.navigate([this.moduleCaller]);
+    } else {
+      this.document.location.href = 'https://www.youtube.com/watch?v=G3AfIvJBcGo';
+    }
+  }
 
 }

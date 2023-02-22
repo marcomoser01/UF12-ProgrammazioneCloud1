@@ -66,8 +66,6 @@ export class NavbarService {
   }
 
   checkNavbarServiceValue(caller: String) {
-
-    console.log(caller)
     
     if(caller != 'main') {
       if(this.$mainNav.observed) {

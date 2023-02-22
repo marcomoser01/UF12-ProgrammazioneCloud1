@@ -6,31 +6,30 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
     {
         path: 'home',
-        component: HomeComponent
+        component: HomeComponent,
     },
     {
-        path: '', 
-        redirectTo: 'home', pathMatch: 'full'
+        path: '',
+        redirectTo: 'home',
+        pathMatch: 'full',
     },
-    { 
-        path: 'libreria', 
-        loadChildren: () => import("./libreria/libreria.module").then(m => m.LibreriaModule)
+    {
+        path: 'libreria',
+        loadChildren: () =>
+            import('./libreria/libreria.module').then((m) => m.LibreriaModule),
     },
     {
         path: 'film',
-        loadChildren: () => import("./film/film.module").then(m => m.FilmModule)
-    },  
-    { 
+        loadChildren: () => import('./film/film.module').then((m) => m.FilmModule),
+    },
+    {
         path: '**',
-        component: Error404Component 
+        component: Error404Component,
     },
 ];
 
 @NgModule({
-    imports: [
-        RouterModule.forRoot(routes,{ enableTracing: false })
-    ],
-    exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes, { enableTracing: false })],
+    exports: [RouterModule],
 })
-
-export class AppRoutingModule { } 
+export class AppRoutingModule { }

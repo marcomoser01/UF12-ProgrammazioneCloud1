@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Error404Component } from './Error/error404/error404.component';
+import { Error404Component } from '../Error/error404/error404.component';
 import { LibreriaComponent } from './libreria.component';
 import { LibriAddComponent } from './libri-add/libri-add.component';
 import { LibriDashboardComponent } from './libri-dashboard/libri-dashboard.component';
@@ -13,6 +13,9 @@ const routes: Routes = [
       },
       {
         path: '', redirectTo: 'dashboard', pathMatch: 'full'
+      },
+      {
+        path: 'home', redirectTo: 'dashboard', pathMatch: 'full'
       },
       {
         path: 'add', component: LibriAddComponent  
