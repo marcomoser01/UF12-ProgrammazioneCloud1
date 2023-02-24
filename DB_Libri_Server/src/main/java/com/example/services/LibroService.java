@@ -16,33 +16,37 @@ import org.springframework.transaction.annotation.Transactional;
 public class LibroService {
     @Autowired
     LibroRepository libroRepository;
-    public LibroService(){
-        
+
+    public LibroService() {
+
     }
 
-    public Optional<Libro> save(Libro entity){
-        Libro libro=libroRepository.save(entity);
-        Optional<Libro> opt=Optional.ofNullable(libro);
+    public Optional<Libro> save(Libro entity) {
+        Libro libro = libroRepository.save(entity);
+        Optional<Libro> opt = Optional.ofNullable(libro);
         return opt;
     }
-    
-    public Optional<Libro> update(Libro entity){
-        Libro libro=libroRepository.save(entity);
-        Optional<Libro> opt=Optional.ofNullable(libro);
+
+    public Optional<Libro> update(Libro entity) {
+        Libro libro = libroRepository.save(entity);
+        Optional<Libro> opt = Optional.ofNullable(libro);
         return opt;
     }
-    public List<Libro> getAll(){
+
+    public List<Libro> getAll() {
         return libroRepository.findAll();
     }
-    public Optional<Libro> findById(Long id){
+
+    public Optional<Libro> findById(Long id) {
         return libroRepository.findById(id);
     }
-    public Optional<Libro>delete(Long id){
-        Optional<Libro> opt=libroRepository.findById(id);
-        if (opt.isPresent()){
+
+    public Optional<Libro> delete(Long id) {
+        Optional<Libro> opt = libroRepository.findById(id);
+        if (opt.isPresent()) {
             libroRepository.deleteById(id);
         }
         return opt;
     }
-    
+
 }

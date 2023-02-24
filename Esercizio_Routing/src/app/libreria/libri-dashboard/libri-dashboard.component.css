@@ -52,14 +52,3 @@
     gap: 1rem;
     padding-block: 1rem;
 }
-
-.add-libro {
-    display: flex;
-    margin: 3rem auto;
-    scale: 1.5;
-    transition: 400ms scale;
-}
-
-.add-libro:hover {
-    scale: 1.6;
-}

@@ -19,6 +19,7 @@ export class LibriDashboardComponent {
 
   constructor(public datiService: LibriService) {
     this.libri$ = this.datiService.getAll()
+    //this.libri$.forEach(res => {console.log(res)});
   }
 
   add() {

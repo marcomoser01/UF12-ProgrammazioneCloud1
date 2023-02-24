@@ -2,7 +2,6 @@ package com.example.controllers;
 
 import com.example.services.GreetingServiceImpl;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 @Controller
@@ -15,10 +14,6 @@ public class MyController {
     public MyController(GreetingServiceImpl greetingService){
         this.greetingService=greetingService;
     }
-
-    // public String hello(){
-    //     return "ciao!";
-    // }
 
     public String hello(){
         return greetingService.sayGretting();
