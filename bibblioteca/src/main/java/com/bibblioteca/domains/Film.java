@@ -39,4 +39,7 @@ public class Film {
     @Column(name = "oscar")
     String number;
 
+    @Column(name = "prenotato", nullable = false)
+    Boolean prenotato;
+
 }
